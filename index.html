@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مهارات اللغة العربية | قيس طلال الجازي</title>
+    <!-- خطوط عربية ملكية -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Reem+Kufi:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --gold-light: #F2C94C;
+            --gold-dark: #C69320;
+            --royal-black: #0F0F0F;
+            --royal-gray: #1A1A1A;
+            --text-gold: #E5C568;
+        }
+
+        body {
+            font-family: 'Amiri', serif;
+            background-color: var(--royal-black);
+            background-image: radial-gradient(circle at 50% 0%, #1a1a1a 0%, #0f0f0f 100%);
+            color: #E0E0E0;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* العناوين */
+        h1, h2, h3 {
+            font-family: 'Reem Kufi', sans-serif;
+            background: linear-gradient(to bottom, #F2C94C, #C69320);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* البطاقات الملكية */
+        .royal-card {
+            background: rgba(20, 20, 20, 0.95);
+            border: 1px solid var(--gold-dark);
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(198, 147, 32, 0.15);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .royal-card:hover {
+            border-color: var(--gold-light);
+            box-shadow: 0 6px 25px rgba(198, 147, 32, 0.25);
+        }
+
+        .royal-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+        }
+
+        /* الأزرار الذهبية */
+        .btn-royal {
+            background: linear-gradient(135deg, #C69320 0%, #F2C94C 50%, #C69320 100%);
+            color: #000;
+            font-weight: bold;
+            border: 1px solid #FFE082;
+            border-radius: 4px;
+            text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .btn-royal:active {
+            transform: scale(0.98);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        }
+
+        /* خيارات الأسئلة */
+        .option-btn {
+            border: 1px solid #333;
+            background: #1A1A1A;
+            color: #E0E0E0;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .option-btn:hover {
+            border-color: var(--gold-dark);
+        }
+        
+        .option-btn.selected {
+            background: linear-gradient(to right, #2c2c2c, #1a1a1a);
+            border-color: var(--gold-light);
+            color: var(--gold-light);
+        }
+
+        .option-btn.correct {
+            background-color: #1b4d24; /* أخضر غامق فاخر */
+            border-color: #2ecc71;
+            color: #fff;
+        }
+
+        .option-btn.wrong {
+            background-color: #4a1b1b; /* أحمر غامق فاخر */
+            border-color: #e74c3c;
+            color: #fff;
+        }
+
+        /* نصوص مميزة */
+        .highlight-text {
+            color: var(--text-gold);
+            font-weight: bold;
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-dark), transparent);
+            margin: 20px 0;
+        }
+
+        /* تفاصيل الشرح */
+        .detail-box {
+            background: rgba(0, 0, 0, 0.4);
+            border-right: 3px solid var(--gold-dark);
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .example-text {
+            font-family: 'Amiri', serif;
+            color: #fff;
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 2px 6px;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 2px 0;
+        }
+    </style>
+</head>
+<body class="pb-10">
+
+    <!-- ترويسة الموقع -->
+    <header class="text-center py-10 px-4 mb-6">
+        <div class="royal-card p-8 mx-auto max-w-md">
+            <h1 class="text-4xl font-bold mb-4">الموسوعة النحوية الشاملة</h1>
+            <p class="text-lg text-gray-300 mb-2">شرح تفصيلي للمنصوبات والمهارات</p>
+            <div class="section-divider"></div>
+            <div class="mt-4">
+                <p class="text-sm text-gray-400">إعداد الطالب المتميز:</p>
+                <p class="text-3xl font-bold mt-2 tracking-wide" style="color: #F2C94C; text-shadow: 0 2px 10px rgba(242, 201, 76, 0.3);">قيس طلال الجازي</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- قائمة التنقل -->
+    <nav class="flex justify-center gap-2 mb-8 px-4 flex-wrap sticky top-2 z-50">
+        <button onclick="scrollToSection('mansoobat')" class="btn-royal px-4 py-2 text-sm w-24">المنصوبات</button>
+        <button onclick="scrollToSection('irab')" class="btn-royal px-4 py-2 text-sm w-24">الإعراب</button>
+        <button onclick="scrollToSection('errors')" class="btn-royal px-4 py-2 text-sm w-24">الأخطاء</button>
+        <button onclick="scrollToSection('quiz')" class="btn-royal px-4 py-2 text-sm w-full max-w-xs mt-2 border-2 border-white">الاختبار (50 سؤال)</button>
+    </nav>
+
+    <!-- المحتوى الرئيسي -->
+    <main class="max-w-md mx-auto px-4 space-y-8">
+
+        <!-- قسم المنصوبات -->
+        <section id="mansoobat" class="space-y-4">
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <div class="h-px w-10 bg-yellow-600"></div>
+                <h2 class="text-2xl font-bold">أولاً: تفصيل المنصوبات</h2>
+                <div class="h-px w-10 bg-yellow-600"></div>
+            </div>
+
+            <!-- المفعول به -->
+            <div class="royal-card p-5">
+                <h3 class="text-xl font-bold mb-3">1. المفعول به وأقسامه</h3>
+                <p class="mb-2 text-gray-300">هو الاسم المنصوب الذي يقع عليه فعل الفاعل، وقد يتعدد المفعول به إلى مفعولين أو ثلاثة.</p>
+                
+                <div class="detail-box">
+                    <p class="highlight-text mb-2">أفعال تنصب مفعولين (أصلهما مبتدأ وخبر):</p>
+                    <ul class="list-none space-y-3 text-sm text-gray-300">
+                        <li>
+                            <strong class="text-white">1. أفعال اليقين:</strong> تدل على الاعتقاد الجازم.<br>
+                            (رأى القلبية، علم، درى، ألفى، وجد).<br>
+                            <span class="example-text">مثال: رأيتُ العلمَ نافعاً.</span> <span class="text-xs text-gray-500">(رأى البصرية تنصب مفعولاً واحداً فقط).</span>
+                        </li>
+                        <li>
+                            <strong class="text-white">2. أفعال الرجحان (الظن):</strong> تدل على ترجيح الأمر.<br>
+                            (ظن، حسب، خال، زعم، هبْ، عدّ).<br>
+                            <span class="example-text">مثال: حسبتُ السرابَ ماءً.</span>
+                        </li>
+                        <li>
+                            <strong class="text-white">3. أفعال التحويل:</strong> تدل على تغيير الشيء من حال لحال.<br>
+                            (صيّر، ردّ، اتخذ، حوّل، جعل).<br>
+                            <span class="example-text">مثال: اتخذ اللهُ إبراهيمَ خليلاً.</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="detail-box mt-4">
+                    <p class="highlight-text mb-2">أفعال تنصب مفعولين (ليس أصلهما مبتدأ وخبر):</p>
+                    <p class="text-sm text-gray-300">مثل: (أعطى، منح، وهب، كسا، ألبس).<br>
+                    <span class="example-text">مثال: كسا الغنيُّ الفقيرَ ثوباً.</span></p>
+                </div>
+            </div>
+
+            <!-- المفعول المطلق -->
+            <div class="royal-card p-5">
+                <h3 class="text-xl font-bold mb-3">2. المفعول المطلق وما ينوب عنه</h3>
+                <p class="mb-2 text-gray-300">مصدر من لفظ الفعل لتوكيده أو بيان نوعه أو عدده.</p>
+                
+                <ul class="list-none text-sm space-y-2 text-gray-300 border-b border-gray-800 pb-3">
+                    <li>🔸 <strong class="text-white">مؤكد للفعل:</strong> <span class="example-text">وكلم الله موسى تكليماً.</span> (لم يأت بعده صفة أو مضاف إليه).</li>
+                    <li>🔸 <strong class="text-white">مبين للنوع:</strong> <span class="example-text">سرت سيرَ العقلاء.</span> (جاء مضافاً أو موصوفاً).</li>
+                    <li>🔸 <strong class="text-white">مبين للعدد:</strong> <span class="example-text">دقت الساعة دقتين.</span></li>
+                </ul>
+
+                <div class="detail-box">
+                    <strong class="text-text-gold block mb-1">النائب عن المفعول المطلق:</strong>
+                    <p class="text-sm text-gray-300">كلمات تذكر قبل المصدر وتأخذ حكمه الإعرابي:</p>
+                    <ul class="list-disc list-inside text-xs text-gray-400 mt-1">
+                        <li><strong>كل وبعض:</strong> <span class="example-text">فلا تميلوا كلَّ الميل.</span></li>
+                        <li><strong>اسم الإشارة:</strong> <span class="example-text">أكرمته ذلكَ الإكرام.</span></li>
+                        <li><strong>العدد:</strong> <span class="example-text">فاجلدوهم ثمانينَ جلدة.</span></li>
+                        <li><strong>صفته:</strong> <span class="example-text">اذكروا الله كثيراً.</span> (أي ذكراً كثيراً).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- المفعول لأجله وفيه -->
+            <div class="royal-card p-5">
+                <h3 class="text-xl font-bold mb-3">3. المفعول لأجله والمفعول فيه</h3>
+                
+                <div class="mb-4">
+                    <strong class="text-text-gold">المفعول لأجله:</strong>
+                    <p class="text-sm text-gray-300">مصدر قلبي (حسي لا يجوز) يبين العلة.<br>
+                    شروطه: أن يكون مصدراً، قلبياً، متحداً مع الفعل في الزمان والفاعل.<br>
+                    <span class="example-text">مثال: تصدقتُ ابتغاءَ مرضاة الله.</span></p>
+                </div>
+
+                <div>
+                    <strong class="text-text-gold">المفعول فيه (الظرف):</strong>
+                    <p class="text-sm text-gray-300">اسم منصوب يتضمن معنى "في".</p>
+                    <ul class="text-sm mt-1 text-gray-400">
+                        <li><strong>ظرف متصرف:</strong> يستعمل ظرفاً وغير ظرف (يوم، شهر).</li>
+                        <li><strong>ظرف غير متصرف:</strong> يلزم الظرفية (قطُّ، عوضُ، حيثُ).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- الحال -->
+            <div class="royal-card p-5">
+                <h3 class="text-xl font-bold mb-3">4. الحال وأنواعه</h3>
+                <p class="text-sm text-gray-300 mb-2">وصف نكرة منصوب يبين هيئة صاحبه (الذي يجب أن يكون معرفة).</p>
+                
+                <div class="space-y-3 text-sm">
+                    <div class="bg-gray-800 p-2 rounded">
+                        <strong class="text-white">1. حال مفردة:</strong> <span class="example-text">جاء القائدُ مبتسماً.</span>
+                    </div>
+                    <div class="bg-gray-800 p-2 rounded">
+                        <strong class="text-white">2. حال جملة (اسمية أو فعلية):</strong><br>
+                        يشترط وجود رابط (الواو أو الضمير أو كلاهما).<br>
+                        <span class="example-text">جاء القائد (وهو يبتسم).</span> (الواو والضمير).<br>
+                        <span class="example-text">رأيتُ الطالب (يقرأ).</span> (الضمير المستتر).
+                    </div>
+                    <div class="text-xs text-text-gold text-center mt-1">"الجمل بعد النكرات صفات، وبعد المعارف أحوال"</div>
+                </div>
+            </div>
+
+            <!-- التمييز -->
+            <div class="royal-card p-5">
+                <h3 class="text-xl font-bold mb-3">5. التمييز (المفسر للإبهام)</h3>
+                
+                <div class="mb-3">
+                    <strong class="text-text-gold">1. تمييز الذات (المفرد):</strong>
+                    <p class="text-sm text-gray-300">يزيل إبهام كلمة واحدة (عدد، وزن، كيل، مساحة).<br>
+                    <span class="example-text">اشتريتُ عشرينَ كتاباً.</span></p>
+                </div>
+                
+                <div>
+                    <strong class="text-text-gold">2. تمييز النسبة (الجملة):</strong>
+                    <p class="text-sm text-gray-300">يزيل إبهام جملة كاملة، ويكون محولاً.<br>
+                    <span class="example-text">وفجرنا الأرضَ عيوناً.</span> (محول عن مفعول به: فجرنا عيون الأرض).<br>
+                    <span class="example-text">أنا أكثرُ منك مالاً.</span> (محول عن مبتدأ: مالي أكثر). </p>
+                </div>
+            </div>
+
+            <!-- المنادى -->
+            <div class="royal-card p-5">
+                <h3 class="text-xl font-bold mb-3">6. المنادى (التفصيل الكامل)</h3>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-right">
+                        <thead>
+                            <tr class="border-b border-yellow-800 text-text-gold">
+                                <th class="pb-2">النوع</th>
+                                <th class="pb-2">الحكم الإعرابي</th>
+                                <th class="pb-2">المثال</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-800 text-gray-300">
+                            <tr>
+                                <td class="py-2 font-bold text-white">العلم المفرد</td>
+                                <td>مبني على الضم</td>
+                                <td>يا قدسُ</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 font-bold text-white">النكرة المقصودة</td>
+                                <td>مبني على الضم</td>
+                                <td>يا طالبُ (وأنت تقصده)</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 font-bold text-white">النكرة غير المقصودة</td>
+                                <td>معرب (منصوب)</td>
+                                <td>يا غافلاً (لأي غافل)</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 font-bold text-white">المضاف</td>
+                                <td>معرب (منصوب)</td>
+                                <td>يا طالبَ العلمِ</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 font-bold text-white">الشبيه بالمضاف</td>
+                                <td>معرب (منصوب)</td>
+                                <td>يا صاعداً جبلاً</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم الإعراب -->
+        <section id="irab" class="space-y-4 pt-6">
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <div class="h-px w-10 bg-yellow-600"></div>
+                <h2 class="text-2xl font-bold">ثانياً: أسرار الإعراب</h2>
+                <div class="h-px w-10 bg-yellow-600"></div>
+            </div>
+
+            <div class="royal-card p-5">
+                <h3 class="text-lg font-bold mb-2">فلسفة العلامات المقدرة</h3>
+                <div class="space-y-3 text-sm">
+                    <div class="detail-box">
+                        <strong class="text-white">1. التعذر (الاستحالة):</strong>
+                        <p class="text-gray-400">يحدث في الألف فقط (المقصور). يتعذر نطق الحركة تماماً.<br>
+                        <span class="example-text">جاء الفتى.</span> (ضمة مقدرة للتعذر).</p>
+                    </div>
+                    <div class="detail-box">
+                        <strong class="text-white">2. الثقل (الصعوبة):</strong>
+                        <p class="text-gray-400">يحدث في الياء والواو (المنقوص). يمكن نطق الحركة لكنها ثقيلة.<br>
+                        <span class="example-text">جاء القاضي.</span> (ضمة مقدرة للثقل).<br>
+                        <span class="text-xs text-text-gold">ملاحظة: تظهر الفتحة لخفتها (رأيتُ القاضيَ).</span></p>
+                    </div>
+                    <div class="detail-box">
+                        <strong class="text-white">3. اشتغال المحل:</strong>
+                        <p class="text-gray-400">عند الاتصال بياء المتكلم.<br>
+                        <span class="example-text">هذا كتابي.</span> (حركة المناسبة للياء منعت ظهور الضمة).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="royal-card p-5">
+                <h3 class="text-lg font-bold mb-2">العلامات الفرعية (جدول تفصيلي)</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-right">
+                        <thead>
+                            <tr class="border-b border-yellow-800 text-text-gold">
+                                <th class="pb-2">النوع</th>
+                                <th class="pb-2">الرفع</th>
+                                <th class="pb-2">النصب</th>
+                                <th class="pb-2">الجر</th>
+                                <th class="pb-2">الجزم</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-800 text-gray-300">
+                            <tr>
+                                <td class="py-2 text-white">الأسماء الخمسة</td>
+                                <td>الواو (أبوك)</td>
+                                <td>الألف (أباك)</td>
+                                <td>الياء (أبيك)</td>
+                                <td class="text-gray-600">-</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 text-white">الأفعال الخمسة</td>
+                                <td>ثبوت النون</td>
+                                <td>حذف النون</td>
+                                <td class="text-gray-600">-</td>
+                                <td>حذف النون</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 text-white">المثنى</td>
+                                <td>الألف</td>
+                                <td>الياء</td>
+                                <td>الياء</td>
+                                <td class="text-gray-600">-</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 text-white">الممنوع من الصرف</td>
+                                <td>الضمة</td>
+                                <td>الفتحة</td>
+                                <td class="text-text-gold">الفتحة*</td>
+                                <td class="text-gray-600">-</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 text-white">المعتل الآخر</td>
+                                <td>ضمة مقدرة</td>
+                                <td>فتحة (ظ/م)</td>
+                                <td class="text-gray-600">-</td>
+                                <td class="text-red-400">حذف العلة</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="text-xs text-gray-500 mt-2">* يجر الممنوع من الصرف بالفتحة بشرط ألا يُعرف بـ (ال) وألا يضاف.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- الأخطاء الشائعة -->
+        <section id="errors" class="space-y-4 pt-6">
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <div class="h-px w-10 bg-yellow-600"></div>
+                <h2 class="text-2xl font-bold">ثالثاً: تصحيح المفاهيم</h2>
+                <div class="h-px w-10 bg-yellow-600"></div>
+            </div>
+
+            <div class="royal-card p-5 space-y-4">
+                <div class="detail-box border-red-800 bg-gray-900">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="text-red-500 font-bold">1. خطأ: مبروك</span>
+                        <span class="text-green-500 font-bold">صواب: مبارك</span>
+                    </div>
+                    <p class="text-xs text-gray-400">لأن "مبروك" اسم مفعول من "برك" (برك الجمل)، أما "مبارك" فهي من "بارك".</p>
+                </div>
+
+                <div class="detail-box border-red-800 bg-gray-900">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="text-red-500 font-bold">2. خطأ: مدراء</span>
+                        <span class="text-green-500 font-bold">صواب: مديرون</span>
+                    </div>
+                    <p class="text-xs text-gray-400">لأن "مدير" اسم فاعل يجمع جمع مذكر سالم، ولا يجمع جمع تكسير على "فعلاء".</p>
+                </div>
+
+                <div class="detail-box border-red-800 bg-gray-900">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="text-red-500 font-bold">3. خطأ: كافة الناس</span>
+                        <span class="text-green-500 font-bold">صواب: الناس كافةً</span>
+                    </div>
+                    <p class="text-xs text-gray-400">لأن "كافة" تعرب حالاً وتأتي مؤخرة ولا تضاف لما بعدها.</p>
+                </div>
+
+                <div class="detail-box border-red-800 bg-gray-900">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="text-red-500 font-bold">4. قواعد الهمزة</span>
+                    </div>
+                    <ul class="text-xs text-gray-400 list-disc list-inside">
+                        <li><strong>ابن:</strong> تحذف همزتها إذا وقعت بين علمين الثاني أب للأول (محمد بن عبدالله).</li>
+                        <li><strong>الواو:</strong> (عمرو) تزاد الواو للتفريق عن (عُمر)، وتحذف في النصب المنون (رأيت عَمْرًا).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- علامات الترقيم -->
+        <section id="punctuation" class="space-y-4 pt-6">
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <div class="h-px w-10 bg-yellow-600"></div>
+                <h2 class="text-2xl font-bold">رابعاً: فن الترقيم</h2>
+                <div class="h-px w-10 bg-yellow-600"></div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+                <div class="royal-card p-3">
+                    <span class="text-3xl text-text-gold font-bold block text-center">،</span>
+                    <strong class="text-white block text-center text-sm">الفاصلة</strong>
+                    <ul class="text-xs text-gray-500 mt-2 list-disc pr-4">
+                        <li>بين الجمل المترابطة.</li>
+                        <li>بعد المنادى.</li>
+                        <li>بين أقسام الشيء.</li>
+                    </ul>
+                </div>
+                <div class="royal-card p-3">
+                    <span class="text-3xl text-text-gold font-bold block text-center">؛</span>
+                    <strong class="text-white block text-center text-sm">المنقوطة</strong>
+                    <p class="text-xs text-gray-500 mt-2 text-center">توضع بين جملتين تكون إحداهما سبباً في حدوث الأخرى.</p>
+                </div>
+                <div class="royal-card p-3">
+                    <span class="text-3xl text-text-gold font-bold block text-center">:</span>
+                    <strong class="text-white block text-center text-sm">النقطتان</strong>
+                    <ul class="text-xs text-gray-500 mt-2 list-disc pr-4">
+                        <li>بعد القول (قال، حكى).</li>
+                        <li>قبل التفصيل (الدهر يومان:..).</li>
+                    </ul>
+                </div>
+                <div class="royal-card p-3">
+                    <span class="text-3xl text-text-gold font-bold block text-center">-</span>
+                    <strong class="text-white block text-center text-sm">الشرطة</strong>
+                    <p class="text-xs text-gray-500 mt-2 text-center">في المحاورات بدلاً من "قال"، وبين العدد والمعدود.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم الاختبار -->
+        <section id="quiz" class="pt-8 pb-12">
+            <div class="text-center mb-6">
+                <h2 class="text-3xl font-bold font-serif mb-2">اختبر معلوماتك</h2>
+                <p class="text-text-gold text-sm uppercase tracking-widest">50 سؤال شامل</p>
+            </div>
+
+            <div class="royal-card p-6 relative">
+                <!-- شريط التقدم -->
+                <div class="w-full bg-gray-800 rounded-full h-1.5 mb-6">
+                    <div id="progress-bar" class="bg-gradient-to-r from-yellow-600 to-yellow-400 h-1.5 rounded-full" style="width: 0%"></div>
+                </div>
+
+                <!-- حاوية السؤال -->
+                <div id="quiz-container">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs text-gray-500 font-bold">السؤال <span id="current-question-num">1</span> من 50</span>
+                        <span class="text-xs text-text-gold font-bold">قيس طلال الجازي</span>
+                    </div>
+                    
+                    <h3 id="question-text" class="text-lg font-bold mb-6 text-white leading-relaxed">...</h3>
+                    
+                    <div id="options-container" class="space-y-3">
+                        <!-- الخيارات -->
+                    </div>
+                </div>
+
+                <!-- شاشة النتيجة -->
+                <div id="result-container" class="hidden text-center py-8">
+                    <div class="text-6xl mb-4">👑</div>
+                    <h3 class="text-2xl font-bold mb-2 text-white">أداء ملكي يا قيس!</h3>
+                    <p class="text-lg mb-6 text-gray-400">النتيجة النهائية: <span id="final-score" class="font-bold text-text-gold text-3xl"></span> / 50</p>
+                    <button onclick="location.reload()" class="btn-royal px-8 py-3 w-full font-bold">إعادة الاختبار</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-8 mt-8 border-t border-gray-800 bg-black">
+        <p class="text-text-gold font-bold text-lg">بالتوفيق جميعا</p>
+        <p class="text-xs text-gray-600 mt-2">تصميم حصري للطالب قيس طلال الجازي</p>
+    </footer>
+
+    <script>
+        // دالة التمرير
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // الأسئلة (بدون حركات)
+        const questions = [
+            // المنصوبات
+            { q: "المفعول به هو اسم منصوب وقع عليه فعل...", options: ["الفاعل", "المبتدأ", "الخبر", "الحال"], a: 0 },
+            { q: "الفعل (وجد) من أفعال...", options: ["الرجحان", "اليقين", "التحويل", "الشروع"], a: 1 },
+            { q: "أي من الأفعال التالية يعتبر من أفعال الرجحان (الظن)؟", options: ["علم", "صير", "حسب", "رأى"], a: 2 },
+            { q: "المفعول المطلق في جملة (كلم الله موسى تكليما) جاء لـ...", options: ["بيان النوع", "بيان العدد", "التوكيد", "بيان السبب"], a: 2 },
+            { q: "المفعول لأجله هو مصدر ... منصوب.", options: ["عقلي", "قلبي", "مادي", "حسي"], a: 1 },
+            { q: "(صباحا) في جملة (سافرت صباحا) تعرب:", options: ["مفعولا به", "مفعولا مطلقا", "ظرف زمان", "حالا"], a: 2 },
+            { q: "الحال يكون دائما...", options: ["معرفة", "نكرة", "مضافا", "مجرورا"], a: 1 },
+            { q: "صاحب الحال يجب أن يكون...", options: ["نكرة", "معرفة", "فعلا", "حرفا"], a: 1 },
+            { q: "في جملة (اشتعل الرأس شيبا)، كلمة (شيبا) تعرب:", options: ["حالا", "تمييزا", "مفعولا به", "خبرا"], a: 1 },
+            { q: "المنادى في جملة (يا عبد الله) نوعه:", options: ["علم مفرد", "مضاف", "نكرة مقصودة", "شبيه بالمضاف"], a: 1 },
+            
+            // تابع المنصوبات
+            { q: "حكم المنادى إذا كان علما مفردا (مثل: يا قدس):", options: ["النصب", "البناء على الضم", "الجر", "البناء على الفتح"], a: 1 },
+            { q: "من حروف النداء للبعيد:", options: ["الهمزة", "أي", "هيا", "الكاف"], a: 2 },
+            { q: "في قولنا (أكرم الضيف إكراما)، إكراما تعرب:", options: ["مفعولا لأجله", "مفعولا مطلقا", "حالا", "تمييزا"], a: 1 },
+            { q: "يقع ظرف الزمان في جواب:", options: ["كيف", "أين", "متى", "لماذا"], a: 2 },
+            { q: "يقع ظرف المكان في جواب:", options: ["أين", "متى", "كم", "من"], a: 0 },
+            { q: "إذا جاء المفعول لأجله معرفا بـ (ال)، فإنه:", options: ["ينصب", "يجر", "يبنى", "يجزم"], a: 1 },
+            { q: "نوع التمييز في (شربت كوبا ماء):", options: ["تمييز نسبة", "تمييز ذات", "تمييز جملة", "حال"], a: 1 },
+            { q: "الأفعال (صير، حول، اتخذ) تفيد:", options: ["اليقين", "الرجحان", "التحويل", "الاستمرار"], a: 2 },
+            { q: "ما ينوب عن المفعول المطلق في (أحببته كل الحب):", options: ["صفته", "كل", "عدده", "آلته"], a: 1 },
+            { q: "الحال يطابق صاحبه في:", options: ["التعريف فقط", "الإعراب فقط", "العدد والجنس", "لا يطابقه"], a: 2 },
+
+            // الإعراب
+            { q: "علامة رفع جمع المذكر السالم هي:", options: ["الضمة", "الواو", "الألف", "ثبوت النون"], a: 1 },
+            { q: "تقدر الحركات على الاسم المقصور (مثل: موسى) لـ...", options: ["الثقل", "التعذر", "المناسبة", "اشتغال المحل"], a: 1 },
+            { q: "تقدر الحركات على الاسم المنقوص (مثل: القاضي) في حالتي:", options: ["الرفع والنصب", "النصب والجر", "الرفع والجر", "جميع الحالات"], a: 2 },
+            { q: "الأسماء الخمسة تنصب بـ...", options: ["الألف", "الياء", "الواو", "الفتحة"], a: 0 },
+            { q: "علامة جر الممنوع من الصرف هي...", options: ["الكسرة", "الياء", "الفتحة", "السكون"], a: 2 },
+            { q: "الأفعال الخمسة ترفع بـ...", options: ["الضمة", "الواو", "الألف", "ثبوت النون"], a: 3 },
+            { q: "المثنى يرفع بـ...", options: ["الألف", "الضمة", "الواو", "الياء"], a: 0 },
+            { q: "علامة جزم الفعل المضارع الصحيح الآخر:", options: ["حذف حرف العلة", "السكون", "حذف النون", "الفتحة"], a: 1 },
+            { q: "تعرب كلمة (أبوك) في جملة (جاء أبوك):", options: ["فاعل مرفوع بالواو", "فاعل مرفوع بالضمة", "مبتدأ مؤخر", "مفعول به"], a: 0 },
+            { q: "في جملة (رأيت القاضي)، حركة (القاضي) هي:", options: ["فتحة مقدرة", "فتحة ظاهرة", "ضمة مقدرة", "كسرة ظاهرة"], a: 1 },
+
+            // الأخطاء الشائعة
+            { q: "الكتابة الصحيحة لكلمة (إن شاء الله) هي:", options: ["إنشاء الله", "إن شاء الله", "إنشالله", "إن شاء الله"], a: 1 },
+            { q: "الصواب في كتابة (مديرو المدارس) هو:", options: ["مديروا المدارس", "مديرو المدارس", "مدير المدارس", "مديرون المدارس"], a: 1 },
+            { q: "كلمة (اسم) همزتها:", options: ["همزة قطع", "همزة وصل", "ممدودة", "متطرفة"], a: 1 },
+            { q: "كلمة (اختبار) همزتها وصل لأنها:", options: ["مصدر فعل رباعي", "مصدر فعل خماسي", "مصدر فعل سداسي", "اسم جامد"], a: 1 },
+            { q: "أي الكلمات التالية كتبت خطأ؟", options: ["استغفر", "إستمتع", "أكرم", "أخذ"], a: 1 },
+            { q: "عند كتابة (300) بالحروف نكتب:", options: ["ثلاث مائة", "ثلاثمائة", "ثلاث مئة", "ثلاثة مائة"], a: 1 },
+            { q: "الفعل (أدعو) يكتب هكذا لأن:", options: ["الواو واو الجماعة", "الواو أصلية", "أصله أدعوا", "لا شيء مما ذكر"], a: 1 },
+            { q: "الفرق بين التاء المربوطة والمبسوطة أن المربوطة تنطق عند الوقف:", options: ["تاء", "هاء", "ألفا", "واوا"], a: 1 },
+            { q: "أي الجمل التالية صحيحة إملائيا؟", options: ["أنت تدعوا للخير", "أنت تدعو للخير", "هم يدعو للخير", "أنتم تدعو للخير"], a: 1 },
+            { q: "كلمة (أسرة) همزتها:", options: ["قطع", "وصل", "متطرفة", "متوسطة"], a: 0 },
+
+            // الترقيم
+            { q: "توضع بين الجمل المتصلة المعنى:", options: ["النقطة .", "الفاصلة ،", "النقطتان :", "علامة التعجب !"], a: 1 },
+            { q: "توضع في نهاية الجملة التامة:", options: ["الفاصلة", "النقطة", "الفاصلة المنقوطة", "الشرطة"], a: 1 },
+            { q: "علامة الترقيم المناسبة بعد القول (قال):", options: ["؛", "،", "؟", ":"], a: 3 },
+            { q: "توضع بين جملتين إحداهما سبب للأخرى:", options: ["الفاصلة المنقوطة ؛", "الفاصلة ،", "النقطة .", "الشرطة -"], a: 0 },
+            { q: "لحصر الجمل المعترضة (الدعائية مثلا) نستخدم:", options: ["القوسين ( )", "علامتي التنصيص \" \"", "الشرطتين - -", "النقطتين :"], a: 2 },
+            { q: "يوضع الكلام المنقول حرفيا (اقتباس) بين:", options: ["قوسين ( )", "علامتي تنصيص \" \"", "شرطتين - -", "معقوفتين [ ]"], a: 1 },
+            { q: "بعد جمل التعجب والفرح نضع:", options: ["؟", "!", "." , "،"], a: 1 },
+            { q: "أين نضع الفاصلة في: (يا محمد.. اقرأ)؟", options: ["بعد يا", "بعد محمد", "بعد اقرأ", "لا يوجد فاصلة"], a: 1 },
+            { q: "تستخدم الشرطة (-) في:", options: ["المحاورات", "نهاية الفقرة", "التعجب", "الاستفهام"], a: 0 },
+            { q: "توضع بين الشيء وأقسامه (مثل: الكلمة ثلاثة أقسام..):", options: ["فاصلة", "نقطة", "نقطتان رأسيتان", "علامة استفهام"], a: 2 },
+
+            // أسئلة متنوعة
+            { q: "أصل (حول) هو فعل من أفعال:", options: ["المبتدأ والخبر", "التحويل", "اليقين", "الظن"], a: 1 },
+            { q: "إعراب (أخوك) في (رأيت أخاك):", options: ["فاعل", "مفعول به", "مبتدأ", "خبر"], a: 1 },
+            { q: "الهمزة في (ابن) همزة:", options: ["قطع", "وصل", "متطرفة", "مد"], a: 1 },
+            { q: "جمع المؤنث السالم ينصب بـ...", options: ["الفتحة", "الكسرة", "الياء", "الألف"], a: 1 },
+            { q: "الفعل المضارع المعتل الآخر يجزم بـ...", options: ["السكون", "حذف النون", "حذف حرف العلة", "الضمة"], a: 2 },
+            { q: "أقسام الكلام هي:", options: ["اسم وفعل وحرف", "ماض ومضارع وأمر", "معرب ومبني", "نكرة ومعرفة"], a: 0 },
+            { q: "تكتب التاء في آخر الفعل الماضي (كتبت):", options: ["مربوطة", "مبسوطة", "هاء", "ألفا"], a: 1 },
+            { q: "علامة نصب الأسماء الخمسة:", options: ["الألف", "الواو", "الياء", "الفتحة"], a: 0 },
+            { q: "في جملة (جئت رغبة في العلم)، رغبة هي:", options: ["حال", "تمييز", "مفعول لأجله", "مفعول به"], a: 2 },
+            { q: "ختاما، الهمزة في كلمة (أحمد):", options: ["وصل", "قطع", "متطرفة", "متوسطة"], a: 1 }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        function loadQuestion() {
+            const q = questions[currentQuestion];
+            document.getElementById('current-question-num').innerText = currentQuestion + 1;
+            document.getElementById('question-text').innerText = q.q;
+            
+            const optionsDiv = document.getElementById('options-container');
+            optionsDiv.innerHTML = '';
+
+            q.options.forEach((opt, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'option-btn w-full p-4 rounded-md text-right font-bold text-sm mb-2';
+                btn.innerText = opt;
+                btn.onclick = () => checkAnswer(index, btn);
+                optionsDiv.appendChild(btn);
+            });
+
+            const progress = ((currentQuestion) / questions.length) * 100;
+            document.getElementById('progress-bar').style.width = `${progress}%`;
+        }
+
+        function checkAnswer(selectedIndex, btn) {
+            const correctIndex = questions[currentQuestion].a;
+            const buttons = document.querySelectorAll('.option-btn');
+            
+            buttons.forEach(b => b.disabled = true);
+
+            if (selectedIndex === correctIndex) {
+                btn.classList.add('correct');
+                score++;
+            } else {
+                btn.classList.add('wrong');
+                buttons[correctIndex].classList.add('correct');
+            }
+
+            setTimeout(() => {
+                currentQuestion++;
+                if (currentQuestion < questions.length) {
+                    loadQuestion();
+                } else {
+                    showResult();
+                }
+            }, 1000);
+        }
+
+        function showResult() {
+            document.getElementById('quiz-container').classList.add('hidden');
+            document.getElementById('result-container').classList.remove('hidden');
+            document.getElementById('final-score').innerText = score;
+            document.getElementById('progress-bar').style.width = '100%';
+        }
+
+        window.onload = loadQuestion;
+
+    </script>
+</body>
+</html>
